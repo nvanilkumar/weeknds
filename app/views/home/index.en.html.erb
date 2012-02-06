@@ -1,0 +1,104 @@
+ <body class="homepage">
+   	
+   		
+   	   	
+    <div class="top-box">
+           		<div class="container">
+			        <div class="homepage-teaser">
+			        	
+			        	
+			        	
+			        	<div class="row master-box">
+			        			<div class="span5 frist-box">
+			        				
+			        					<div class="row">
+			        	   				<span class="span2 offset1">
+			        	   					<!--<img src="http://placehold.it/150x150" alt="" />-->
+			        	   					<img SRC="assets/icons/discover.png" alt="discover">
+			        	   				</span>
+			        					</div><!--/discover-image-->
+			        				
+			        				<h2>Discover</h2>
+			        				<div class="green-line"></div>
+			        				<p>Discover awesome trips around you!</p>
+			        			</div><!--/frist-box (span5)-->
+			        			
+			        			<div class="span5 second-box">
+			        			
+			        				<div class="row">
+			        					<span class="span2 offset1">
+			        						<!--<img src="http://placehold.it/150x150" alt="" />-->
+			        						<img SRC="assets/icons/create.png" alt="create">
+			        					</span>
+			        				</div><!--/create-image-->   					
+			        			
+			        				<h2>Create</h2>
+			        				<div class="blue-line"></div>
+			        				<p>Create a group for the trip you like</p>
+			        			</div><!--/second-box (span5)-->
+			        			
+			        			<div class="span5 third-box">
+			        			
+			        					<div class="row">
+			        						<span class="span2 offset1">
+			        							<!--<img src="http://placehold.it/150x150" alt="" />-->
+			        							<img SRC="assets/icons/invite.png" alt="discover">
+			        						</span>
+			        					</div><!--/pin-image-->
+			        					
+			        				<h2>Invite</h2>
+			        				<div class="orange-line"></div>
+			        				<p>Invite your friends to join your group</p>
+			        			</div><!--/third-box (span5)-->
+			        			
+			        	</div><!--/top master-box row-->
+			        	
+			        	
+			        	
+			        </div><!--/homepage-teaser-->
+		   		</div><!--/container-->
+	  			
+	  			<div class="start-btn">
+	  				<a href="#bottom-box" class="btn large" id="start-btn-clicked">Start here</a>
+  				</div><!--/start-btn-->
+  				
+  				
+    </div> <!-- /top-box -->
+    
+    	<div class="container">
+	    	<div class="arrow"></div>
+	    </div>
+	    
+    <div id="bottom-box">
+         		<div class="container">
+         			
+         			<div class="deals-block">	
+         				<% @experiences.each do |experience| %>
+	         			<div class="deal-box">
+	         			<!--<div class="color-bar"></div>-->
+	         				<div class="shadex">
+	         					<h3><%= experience.title %></h3></a>
+	         					<p>Chicago,IL</p>
+	         				</div>
+	         				<% imageurl =  experience.photourl%>
+	         				<%=link_to image_tag(imageurl), experience_path(experience) %>
+	         				<% %>
+	         			</div>
+	                    <% end %>
+	    
+         			
+         		</div>
+    
+      </div> <!-- /white-box -->
+    
+
+	<!-- js code for opacity:1 for bottom-box-->
+	<script>
+		$('#start-btn-clicked').click(
+		    function(){
+		        $('#bottom-box').fadeIn("slow");
+		    });//click
+	</script>
+	
+
+  </body>

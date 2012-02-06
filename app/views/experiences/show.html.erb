@@ -1,0 +1,158 @@
+
+    <link HREF="assets/bootstrap.css" rel="stylesheet">
+	<link HREF="assets/stylesheet.css" rel="stylesheet">
+
+	<header>
+	    <%= render "home/header"%>
+		      	    
+	</header>
+	
+    <div class="container">
+
+      <div class="content">
+        <!--<div class="page-header">
+          <h1>Page name <small>Supporting text or tagline</small></h1>
+        </div>-->
+        
+        
+        <div class="row">
+        
+          <div class="span9">
+            <!--<h2>Main content</h2>-->
+            
+            <div class="row">
+            	<div class="span9">
+		             <!--Big pic-->
+		            <ul class="media-grid">
+		              <li>
+		              	<% imageurl =  "/assets/" + @experience.photourl%>
+		                <a href="#">
+		                  <img class="thumbnail" SRC=<%= imageurl %> width="420px" height="290px" alt="">
+		                </a>
+		              </li>             
+		            </ul> <!--/Big pic-->
+		           
+		            
+		            <!--small pics-->
+		            <ul class="media-grid">
+		              <li>
+		               
+		              </li>
+		              <li></li>
+		              <li></li>
+		              <li></li>
+		              <li></li>                                 
+		            </ul><!--/small pics-->
+		            
+	            </div><!--/pics span-->
+	         </div><!--/pics row-->
+	         
+            <!--here you can add Groups info-->
+       
+            <div class="span9"></div>
+            <div class="divider">Public</div>
+            <br/>
+            <% @groups.each do |group| %>
+    		<% if group.grouptype == "public" %>
+            <div class="maindiv">
+            <div class="maindivleft">
+            	<% imageurl =  "/assets/" + @experience.photourl%>
+            <%=link_to image_tag(imageurl, :height => 120, :width => 140), group_path(group, :parentexp=>@experience.id) %>
+            </div><!--maindiv left-->
+            <div class="maindivcenter">
+            <div class="textnew"><%= group.title %></div>
+            <div class="mdli">
+            </div>
+            <div class="mdci">
+             
+            </div>
+            </div><!--maindiv center-->
+            <div class="maindivright">
+            <div class="tophead">
+            More
+            </div><!--tophead-->
+            <div class="ima">Join</div>
+            <div class="imatext"><%= group.numberofseats %> are required</div>
+            </div><!--maindiv right-->
+            </div><!--maindiv end-->
+            <% end %>
+            <% end %>
+           
+            <div class="divideror">Private</div>
+            <br/>
+            <% @groups.each do |group| %>
+            <% if group.grouptype == "private" %>
+            <div class="maindiv">
+            <div class="maindivleft">
+            	<% imageurl =  "/assets/" + @experience.photourl%>
+            <%=link_to image_tag(imageurl, :height => 120, :width => 140), group_path(group, :parentexp=>@experience.id) %>
+            </div><!--maindiv left-->
+            <div class="maindivcenter">
+            <div class="textnew"><%= group.title %></div>
+            <div class="mdli">
+            </div>
+            <div class="mdci">
+             
+            </div>
+            </div><!--maindiv center-->
+            <div class="maindivright">
+            <div class="tophead">
+            More
+            </div><!--tophead-->
+            <div class="ima">Request</div>
+            </div><!--maindiv right-->
+            </div><!--maindiv end-->
+            <% end %>
+           <% end %>
+          </div><!--/left span (span9)-->
+          
+          
+                    
+          <div class="span7">
+          		
+				<div class="row">
+					<div class="span6 tripbox">
+						<h2>TechTalent Trip!</h2>
+						<p><strong>Chicago,IL</strong> <a href="#">map it</a></p>
+						
+						<p class="trip-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+					</div>
+				</div><!--/title,address,decription row-->
+				
+            	<div class="row">
+            		<div class="span6 timebox">
+            			<h4>Date</h4>
+            			<p><strong>12/1/2012</strong> <small>(10:30 - 12:30)</small></p>
+            			<p><strong>12/1/2012</strong> <small>(10:30 - 12:30)</small></p>
+            			<p><strong>12/1/2012</strong> <small>(10:30 - 12:30)</small></p>
+            		</div>
+            	</div><!--/date,time row-->
+            	
+            	<div class="row">
+            		<div class="span6 pricebox">
+            			<h4>Price</h4>
+            			<p><strong><%= @experience.defaultprice %></strong> <small>Per person</small></p>
+            			
+            		</div>
+            	</div><!--/Price row-->
+            	
+            	<div class="row">
+            		<div class="span6 membersbox">
+<!--            			<h4>How many members?</h4>-->
+            			<p>Reserve up to <strong><%= @experience.minimumseats %></strong> spots</p>
+            			
+            			<%= link_to 'Create your group', new_group_path(:parentexp=>@experience.id) %>
+            			
+            		</div>
+            	</div><!--/members row-->
+            	            
+          </div><!--/right span (span7)-->
+          
+        </div><!--top row-->
+        
+                
+      </div><!--/content-->
+
+
+    </div> <!-- /container -->
+

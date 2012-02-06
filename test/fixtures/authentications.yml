@@ -1,0 +1,9 @@
+one:
+  usersecure_id: 1
+  provider: MyString
+  fuserid: MyString
+
+two:
+  usersecure_id: 1
+  provider: MyString
+  fuserid: MyString

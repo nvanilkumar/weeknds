@@ -1,0 +1,45 @@
+<header>
+	    <%= render "home/header"%>
+		      	    
+</header>
+<%= form_for(@experience) do |f| %>
+  <% if @experience.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@experience.errors.count, "error") %> prohibited this experience from being saved:</h2>
+
+      <ul>
+      <% @experience.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br />
+    <%= f.text_field :description %>
+  </div>
+  <div class="field">
+    <%= f.label :photourl %><br />
+    <%= f.text_field :photourl %>
+  </div>
+  <div class="field">
+    <%= f.label :isactive %><br />
+    <%= f.text_field :isactive %>
+  </div>
+  <div class="field">
+    <%= f.label :defaultprice %><br />
+    <%= f.text_field :defaultprice %>
+  </div>
+  <div class="field">
+    <%= f.label :minimumseats %><br />
+    <%= f.number_field :minimumseats %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

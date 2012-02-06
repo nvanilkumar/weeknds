@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  firstname: 
+  lastname: 
+  email: 
+  password_digest: 
+  phone: 
+  mobile: 
+  isFBUser: 
+  isGroupOrganiser: 
+  photourl: MyString
+
+two:
+  firstname: 
+  lastname: 
+  email: 
+  password_digest: 
+  phone: 
+  mobile: 
+  isFBUser: 
+  isGroupOrganiser: 
+  photourl: MyString

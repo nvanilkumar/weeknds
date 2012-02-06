@@ -1,0 +1,53 @@
+<h1>Listing groups</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>User</th>
+    <th>Startdate</th>
+    <th>Enddate</th>
+    <th>Grouptype</th>
+    <th>Experience</th>
+    <th>Payment</th>
+    <th>Description</th>
+    <th>Password digest</th>
+    <th>Form</th>
+    <th>Time</th>
+    <th>Isactive</th>
+    <th>Isvalid</th>
+    <th>Invitationurl</th>
+    <th>Created at</th>
+    <th>Updated at</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @groups.each do |group| %>
+  <tr>
+    <td><%= group.title %></td>
+    <td><%= group.user_id %></td>
+    <td><%= group.startdate %></td>
+    <td><%= group.enddate %></td>
+    <td><%= group.grouptype %></td>
+    <td><%= group.experience_id %></td>
+    <td><%= group.payment_id %></td>
+    <td><%= group.description %></td>
+    <td><%= group.password_digest %></td>
+    <td><%= group.form_id %></td>
+    <td><%= group.time %></td>
+    <td><%= group.isactive %></td>
+    <td><%= group.isvalid %></td>
+    <td><%= group.invitationurl %></td>
+    <td><%= group.created_at %></td>
+    <td><%= group.updated_at %></td>
+    <td><%= link_to 'Show', group %></td>
+    <td><%= link_to 'Edit', edit_group_path(group) %></td>
+    <td><%= link_to 'Destroy', group, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Group', new_group_path %>

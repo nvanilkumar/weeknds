@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  group_id: 
+  usersecure_id: 
+  numofinstallments: 
+  paymentstatus: 1
+
+two:
+  group_id: 
+  usersecure_id: 
+  numofinstallments: 
+  paymentstatus: 1

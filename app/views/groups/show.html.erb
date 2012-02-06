@@ -1,0 +1,50 @@
+<header>
+	    <%= render "home/header"%>
+		      	    
+</header>
+
+<p>
+  <b>Title:</b>
+  <%= @group.title %>
+</p>
+	<% imageurl =  "/assets/" + @experienceparent.photourl%>
+          <%=link_to image_tag(imageurl, :height => 120, :width => 140), group_path(@group, :parentexp=>@experienceparent.id, :status=>2) %>
+<b>Group Details </b>  
+<p>
+  <b>Grouptype:</b>
+  <%= @group.grouptype %>
+</p>
+<% if @group.description != " " %>
+<p>
+  <b>Description:</b>
+  <%= @group.description %>
+</p>
+<% end %>
+
+<p>
+  <b>Time:</b>
+  <%= @group.time %>
+</p>
+
+<p>
+  <b>Isvalid:</b>
+  <%= @group.isvalid %>
+</p>
+<%  %>
+<p>
+  <b>Invitationurl:</b>
+  <%= @group.invitationurl %>
+</p>
+<%= render :partial=>'contact'%>
+<%= render :partial=>'contact_list'%>
+<br />
+<% if @status == 1 %>
+<% groupidstr = @group.title %>
+<%= link_to 'Join', "/joinGroup", params[:id => @group.id] %>
+<div class="ima">Join</div>
+<% elsif @status == 3 %>
+<%= link_to 'Request Invites', "/home"%>
+<% end %>
+<%= @status %>
+<%= link_to 'Edit', edit_group_path(@group) %> |
+<%= link_to 'Back', experiences_path(@experience) %>

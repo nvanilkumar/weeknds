@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <title>Create group</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    
+    <!--Google font-->
+	<link href="/assests/bootstrap.css" rel="stylesheet">
+    
+    <script type="text/javascript">
+// <![CDATA[
+function display(obj,id1) {
+txt = obj.options[obj.selectedIndex].value;
+document.getElementById(id1).style.display = 'none';
+if ( txt.match(id1) ) {
+document.getElementById(id1).style.display = 'block';
+}
+}
+// ]]>
+</script>
+
+</head>
+  <body>
+    
+    <div class="container">
+
+      <div class="content">
+        <div class="page-header">
+          <h1>Create a group </h1>
+        </div>
+        
+<%= form_for(@group) do |f| %>
+  <% if @group.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@group.errors.count, "error") %> prohibited this group from being saved:</h2>
+
+      <ul>
+      <% @group.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  
+
+	<div class="row">
+        
+          <div class="span9">
+           		<div class="clearfix field">
+	           		<label><%= f.label :title %></label>
+	           		<span class="xlarge span7"><%= f.text_field :title %></span>
+	           	</div>
+	           	<div class="clearfix field">
+	           		<span class="xlarge span7"><%= f.hidden_field :experience_id, :value => @experienceparent.id %></span>
+	           	</div>
+	           	
+	           	
+  				<div class="clearfix field">
+           			<label><%= f.label :startdate %></label>
+           			<%= f.select :startdate, options_for_select([ "12/20/2011", "1/20/2011", "1/22/2011" ], "12/20/2011") %>
+	           	
+  				</div>
+  				<div class="clearfix field">
+  					<label><%= f.label :time %></label>
+  					<%= f.select :time, options_for_select([ "10:30 - 12:30", "1:30 - 2:30", "1:30 - 2:30" ], "10:30 - 12:30") %>
+  				</div>
+  				<div class="clearfix field">	
+	           	<label><%= f.label :grouptype %></label> 
+<%= f.select :grouptype, options_for_select([ "public", "private" ], "public") %>
+</div>
+<p id="text" style="display: none;">
+
+	<label><%= f.label :password_digest %></label><span class="xlarge span7"><%= f.password_field :password_digest %></span> 
+ 
+ </p>
+              
+               	
+  				<div class="clearfix field">
+    				<label><%= f.label :description %></label>
+   					<span class="xlarge span7"><%= f.text_area :description %></span>
+  				</div>
+  				<div class="clearfix field">
+    				<label><%= f.label :numberofseats %></label>
+    				<span class="xlarge span7"><%= f.number_field :numberofseats , :min =>@experience.minimumseats%></span>
+  				</div>
+  				<fieldset>
+	           		<label>Invite your friends by emails</label>
+		           	<div class="clearfix">			
+   		   	      		
+          <%= render 'contact'%>
+          <%= render 'contact_list'%>
+          
+  <% if current_usersecure %>
+    <div id="friends">
+      <p><%= link_to "Invite Your Facebook Friends", "#", :id => "invite_fb_friends" %></p>
+
+      <div id="fb-root"></div>
+
+      <script src="http://connect.facebook.net/en_US/all.js"></script>
+
+      <script>
+        $(function(){
+    
+          $("a#invite_fb_friends").click(function() {
+            FB.init({ 
+               appId:'342609615758703', 
+               cookie:false, 
+               status:true
+            });
+      
+            FB.ui({ method: 'apprequests', message: '<%= current_usersecure.firstname %> <%= current_usersecure.lastname %> invites you to the 52wknds.com'});
+          });
+        });
+      </script>
+    </div>
+  <% end %>
+          			</div>
+	           	
+	           	</fieldset>
+  			<div class="actions">
+    			<%= f.submit %>
+  			</div>
+	<% end %>
+	</div>
+	<div class="span7">
+          		
+				<div class="row">
+					<div class="span6 tripbox">
+						<h2>TechTalent Trip!</h2>
+						<p><strong>Chicago,IL</strong> <a href="#">map it</a></p>
+						
+						<p class="trip-text">Lorem Ipsum is simply dummy text of the 
+printing and typesetting industry. Lorem Ipsum has been the industry's 
+standard dummy text ever since the 1500s, when an unknown printer took a
+ galley of type and scrambled it to make a type specimen book.</p>
+					</div>
+				</div><!--/title,address,decription row-->
+				
+            	
+            	<div class="row">
+            		<div class="span6 pricebox">
+            			<h4>Price</h4>
+            			<p><strong><%= @experienceparent.defaultprice %></strong> <small>Per person</small></p>
+            			
+            		</div>
+            	</div>
+            </div>
+         </div>	
+     </div>    
+</div>
+</body>
+</html>

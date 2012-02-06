@@ -1,0 +1,529 @@
+/* Override some defaults */
+      /*html, body {
+        background-color: #fff;
+      }*/
+      body {
+        /*padding-top: 40px;*/ /* 40px to make the container go all the way to the bottom of the topbar */
+        
+        /*font-family: 'Rosario', sans-serif;*/
+      }
+      .container > footer p {
+        text-align: center; /* center align it with the container */
+      }
+      .container {
+        width: 940px; /* downsize our container to make the content feel a bit tighter and more cohesive. NOTE: this removes two full columns from the grid, meaning you only go to 14 columns and not 16. */
+      }
+
+      /* The white background content wrapper */
+      .container > .content {
+        background-color: #fff;
+        padding: 20px;
+        margin: 20px -20px; /* negative indent the amount of the padding to maintain the grid system */
+        /*-webkit-border-radius: 0 0 6px 6px;
+           -moz-border-radius: 0 0 6px 6px;
+                border-radius: 0 0 6px 6px;
+        -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.15);
+           -moz-box-shadow: 0 1px 2px rgba(0,0,0,.15);
+                box-shadow: 0 1px 2px rgba(0,0,0,.15);*/
+      }
+
+      /* Page header tweaks */
+      .page-header {
+        background-color: #f5f5f5;
+        padding: 20px 20px 10px;
+        margin: -20px -20px 20px;
+      }
+
+      /* Styles you shouldn't keep as they are for displaying this base example only */
+      .content .span10,
+      .content .span4 {
+       /* min-height: 500px;*/
+      }
+      /* Give a quick and non-cross-browser friendly divider */
+      .content .span6 {
+        margin-left: 0;
+        padding-left: 19px;
+       /* border-left: 1px solid #eee;*/
+      }
+
+      .topbar .btn {
+        border: 0;
+	}      
+	
+	
+/* Abdul's Tweaks*/
+
+/* @group General classes */
+
+header{
+	/*background-color: #76c3e5;*/
+	background-color: #9ad5ec;
+	/*padding: 15px 0px;*/
+	/*margin-bottom: 20px;*/
+}
+
+.new-hed{
+	padding-top: 10px;
+}
+
+a.logo{
+	color: #fff;
+	font-size: 25px;
+	font-weight: bold;
+	padding:2px 0px 0px;
+	text-shadow: 1px 1px 1px #55b3dd;
+	float: left;
+}
+
+a.logo:hover{
+	text-decoration: none;
+	color: #eaeaea;
+}
+
+.welcome-msg{
+	padding-top: 5px;
+	color: #fff;
+}
+
+.welcome-msg a{
+	color: #2786C2;
+}
+
+h4{
+	color: #2786C2;
+}
+p,h5{
+	color: #696969;
+}
+
+/* My navbar*/
+
+ul.new-nav{
+padding-top: 5px;
+/*margin-right: 20px;*/
+float: left;
+
+
+}
+ul.new-nav li{
+	display: inline;
+	padding: 2px;
+	
+}
+
+
+ul.new-nav li a{
+	padding:19px 10px;
+	text-decoration: none;
+	color: #fff;
+	font-size: 14px;
+	/*background-color: #fff;*/
+}
+
+ul.new-nav li a.active{
+	color: #fff;
+	background-color: #999;
+}
+
+ul.new-nav li a:hover{
+	background-color: #fff ;
+	color:#2786C2 ;
+}
+
+
+/* @end */
+
+	
+/*Trip page*/
+	.trip-text,.group-text{
+		/*margin-top: 20px;*/
+		font-size: 14px;
+	}
+	
+	.tripbox,.timebox,.pricebox,.membersbox
+	{
+		/*margin-bottom: 20px;*/
+		padding: 10px 20px;
+		/*background: #f0f0f0;*/
+	}
+	
+	/*top border*/
+	.timebox,.pricebox,.membersbox{
+		border-top: 1px solid #eee;		
+	} 
+	
+	.pricebox strong{
+		font-size: 16px;
+	}
+	
+	.span7 .row h3{
+		padding: 5px 0px;
+	} 
+	
+	.other-deals{
+		padding-top: 10px;
+		border-top: 1px solid #ddd;
+		/*margin-top: 20px;*/
+		/*	margin-left: 2px;*/
+	}
+	
+	/* Headings */
+	
+	.tripbox h2{
+		color:#2786C2;
+	}
+	
+	/*Group page*/
+	
+	.groupbox{
+		border-top: 1px solid #ddd;
+		padding: 20px 0px;
+		background-color: #f8f8f8;
+	}
+	
+	/* Trips list*/
+	
+	.tirp-row{
+		background: #f5f5f5 ;
+		border-bottom: 1px solid #ddd;
+		padding-top: 20px;
+	}
+	
+	.tirp-row img{
+		height: 200px;
+		width: 200px;
+	}
+		
+	/* @group Home Page */
+	
+	body.homepage{
+			/*background-color: #2da7dc;*/
+			padding-top: 0px;
+			/*background-color: #eaeaea;*/
+			/*background-color: #9FC54E;*/
+			/*background-color: #76c3e5;*/
+			background-color: #9ad5ec;
+		}
+		
+		.homepage header{
+			/*background-color: #76c3e5;*/
+	/*				background-color: #9ad5ec;*/
+			padding: 15px 0px;
+			/*margin-bottom: 20px;*/
+		}			
+		
+		.homepage a.logo{
+			font-size: 40px;
+		}
+					
+		
+		.homepage .content{
+			margin-top: 50px;
+			background: transparent;	
+		}
+		
+		.homepage-teaser{
+			/*background-color: #a3c756;*/
+			/*padding: 40px 90px;*/
+			padding: 40px 0px;
+			
+		}
+		
+		/*.homepage-teaser p{
+			font-size: 40px;
+			line-height: normal;
+			color: #ffffff;
+			text-shadow: 1px 1px 1px #8cb23a;
+			/*background-color: #484848;*!/
+			padding: 10px 10px;
+		}*/
+		
+		.homepage-teaser .number{
+			background-color: #eaeaea;
+			color:#9FC54E ;
+			padding:0px 5px;
+			margin-right: 10px;
+			text-shadow: none;
+		}
+		
+		.start-btn{
+			margin: 0 auto;
+			width: 97px;
+		}
+		
+		#start-btn-clicked{
+			
+		}
+		.homepage .top-box{
+			/*background-color: #9FC54E;*/
+			background-color: #fff;
+			;
+			padding: 10px 0px;
+		}
+		
+		
+		/*adjust images size for (boxes)*/
+		
+		
+		.homepage .frist-box,.second-box, .third-box{
+			background: #fff;
+			padding:5px ;
+		}
+		
+		.homepage .frist-box,.second-box{
+			/*border-right:1px solid #eee ;*/
+		}
+		
+		.homepage .frist-box p,.second-box p, .third-box p {
+			color: #969696;
+			font-size: 20px;
+		}
+		
+		
+		.homepage .frist-box h2{
+			color:#9FC54E ;
+		}
+		
+		.homepage .second-box h2{
+			color:#2786C2;
+		}
+	
+		.homepage .third-box h2{
+			/*color:#F75342 ;*/
+			/*color: #F8B552;*/
+			color: #F6A23D;
+		}
+		
+		/*lines*/
+		.green-line, .blue-line, .orange-line{
+			height: 10px;
+			width: 100%;
+			margin:5px 0px;
+			-moz-border-radius: 10px;
+			-webkit-border-radius: 10px;
+			border-radius: 10px;
+		}
+		
+		.green-line{
+			/*background-color:#9FC54E;*/
+			background-color: #BBD885;
+		}
+		
+		.blue-line{
+			/*background-color:#76c3e5;*/
+			background-color: #9ad5ec;
+		}
+		
+		.orange-line{
+			/*background-color: #F8B552;*/
+			background-color: #FACB6A;
+		}
+	
+	
+		
+	.arrow{
+		border-left: 50px solid transparent;
+		/*border-top: 50px solid #9FC54E;*/
+		border-top: 50px solid #fff;
+		border-right: 50px solid transparent;
+		content: " ";
+		display: block;
+		height: 0;
+		/*position: absolute;*/
+		width: 0;
+		margin: 0 auto;
+		margin-bottom: 20px;
+	}
+	
+	/*bottom-box*/
+	
+	.homepage #bottom-box{
+		/*background-color: #fff;*/
+		padding: 20px 0px 0px 0px;
+		display: none;
+	}
+	
+	.homepage .deals-block{
+		margin: 0 auto;
+		padding-left: 10px;
+	}
+	
+	.homepage .deal-box{
+		float: left;
+		padding: 0px 5px;
+		position: relative;
+		top: 0;
+		left: 0;
+		display: block;
+	}
+	
+	.deal-box img{
+		/*border: 5px solid #7c7c7c;*/
+		width: 290px;
+		height: 280px;
+		/*border-radius: 5px;*/
+	}
+	
+	.deal-box a{
+		cursor: pointer;
+	}
+	
+	.deal-box a:hover{
+		opacity: 0.5;
+	}
+	
+	.color-bar{
+		border-top: 10px solid #FBCA54;
+		border-bottom: 1px solid transparent;
+	}
+	
+	.shadex{
+		width: 290px;
+		position: absolute;
+		bottom: 5px;
+		z-index: 1;
+		height: 60px;
+		background-color: rgba(0, 0, 0, 0.75);
+	}
+	
+	/*.shade-text{
+		position: absolute;
+		bottom: 20px;
+		left: 5px;
+	}*/
+	
+	.shadex h3{
+		color: #fff;
+		padding-left: 5px;
+		font-weight: normal;
+	}
+	
+	.shadex p{
+		color: #fff;
+		padding-left: 5px;
+		font-style: italic;
+		font-weight: lighter;
+	}
+
+		/* @end */
+	
+	
+	
+	
+	
+	
+
+.divideror {
+height: 27px;
+background: #faa41a;
+display: block;
+margin-top: 3px;
+font-family:Arial, Helvetica, sans-serif;
+font-size:14px;
+font-weight:bold;
+color:#FFF;
+}	
+	
+	
+
+.divider {
+height: 27px;
+background: #8DC63F;
+display: block;
+margin-top: 3px;
+font-family:Arial, Helvetica, sans-serif;
+font-size:14px;
+font-weight:bold;
+color:#FFF;
+}
+
+.maindiv{
+	height:150px;
+	}
+	
+.maindivleft{
+	width:150px;
+	height:120px;
+	float:left;
+	}
+.maindivcenter{
+	width:190px;
+	height:120px;
+	float:left;
+	
+	}
+.maindivright{
+	width:170px;
+	height:120px;
+	float:left;
+	background-image: url(../assets/leftbackbg.png);
+	}
+	
+.mdci{
+	height:60px;
+	padding-left:5px;
+	padding-right:5px;
+	
+	}
+	
+.textnew{
+	font-family:Verdana, Geneva, sans-serif;
+	font-size:16px;
+	font-weight:bold;
+	color:#333;
+	height:30px;
+	line-height:30px;
+	}
+	
+.mdli{
+	height:30px;
+	
+	}
+	
+.tophead{
+	background-image:url(../assets/leftbakcbgt.png);
+	width:170px;
+	height:40px;
+	margin-top:7px;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:14px;
+	font-weight:bold;
+	text-align:center;
+	line-height:30px;
+	}
+	
+.ima{
+	width:100px;
+	height:30px;
+	background-image:url(../assets/ima.png);
+	background-repeat:no-repeat;
+	margin-left:30px;
+	text-align:center;
+	color:#FFF;
+	font-family:Arial, Helvetica, sans-serif;
+	font-weight:bold;
+	line-height:30px;
+	
+	}
+.imatext{
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+	text-align:center;
+	height:30px;
+	line-height:30px;
+	margin-top:5px;
+
+	
+	}
+	
+	.imgright{
+	width:420px;
+	height:290px;
+	float:left;
+
+
+
+	background-image
+; 			background-image:url(../../../beta/images/1.jpg);
+	
+	}

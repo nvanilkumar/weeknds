@@ -1,0 +1,3 @@
+[submodule "vendor/prawn"]
+	path = vendor/prawn
+	url = git@github.com:nvanilkumar/52wkndsemail.git
