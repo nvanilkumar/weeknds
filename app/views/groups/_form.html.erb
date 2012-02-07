@@ -12,17 +12,21 @@
     <![endif]-->
     
     <!--Google font-->
-	<link href="/assests/bootstrap.css" rel="stylesheet">
     
     <script type="text/javascript">
+    $('#text').hide();
 // <![CDATA[
-function display(obj,id1) {
-txt = obj.options[obj.selectedIndex].value;
-document.getElementById(id1).style.display = 'none';
-if ( txt.match(id1) ) {
-document.getElementById(id1).style.display = 'block';
+function my_fun()
+{
+	var value = document.myForm.contact;
+	 
+	 
+	 if (document.myForm.elements[6].value=='Private'){document.myForm.elements[7].style.visibility='visible'}
+	 else {document.myForm.elements[7].style.visibility='hidden'};
+	 
+	 
 }
-}
+ 
 // ]]>
 </script>
 
@@ -36,8 +40,8 @@ document.getElementById(id1).style.display = 'block';
           <h1>Create a group </h1>
         </div>
         
-<%= form_for(@group) do |f| %>
-  <% if @group.errors.any? %>
+<%= form_for(@group, :html => { :name => "myForm" }) do |f|   %>
+   <% if @group.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@group.errors.count, "error") %> prohibited this group from being saved:</h2>
 
@@ -73,9 +77,9 @@ document.getElementById(id1).style.display = 'block';
   				</div>
   				<div class="clearfix field">	
 	           	<label><%= f.label :grouptype %></label> 
-<%= f.select :grouptype, options_for_select([ "public", "private" ], "public") %>
+<%= select('contact', 'city', [ 'Public', 'Private'], {}, :onchange => "my_fun();") %>
 </div>
-<p id="text" style="display: none;">
+<p id="text" style="visibility:hidden;">
 
 	<label><%= f.label :password_digest %></label><span class="xlarge span7"><%= f.password_field :password_digest %></span> 
  
@@ -88,14 +92,13 @@ document.getElementById(id1).style.display = 'block';
   				</div>
   				<div class="clearfix field">
     				<label><%= f.label :numberofseats %></label>
-    				<span class="xlarge span7"><%= f.number_field :numberofseats , :min =>@experience.minimumseats%></span>
+    				<span class="xlarge span7"><%= f.number_field :numberofseats , :min =>@experienceparent.minimumseats%></span>
   				</div>
   				<fieldset>
 	           		<label>Invite your friends by emails</label>
 		           	<div class="clearfix">			
    		   	      		
-          <%= render 'contact'%>
-          <%= render 'contact_list'%>
+      
           
   <% if current_usersecure %>
     <div id="friends">
