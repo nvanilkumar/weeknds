@@ -13,6 +13,7 @@ gem 'omniauth-twitter'
 gem 'omniauth-facebook'
 gem 'pdf-reader'
 gem 'prawn'
+gem 'closure-compiler'
 
 
 # Gems used only for assets and not required
